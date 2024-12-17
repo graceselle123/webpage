@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="login.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+   
+     
+   
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <div style="position: relative;">
+                <input type="password" id="password" name="password" required>
+                <span class="show-password" onclick="togglePassword()">👁️</span>
+            </div>
+        </div>
+        <button class="login-btn"  type="submit" onclick="login()">Login</button>
+    </div>
+
+    <script>
+        function togglePassword() {
+            const passwordField = document.getElementById("password");
+            const passwordFieldType = passwordField.type;
+            if (passwordFieldType === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+        }
+        function login()
+        {
+            var pass = document.getElementById("password").value;
+            var user = document.getElementById("username").value;
+            if (pass ==="managing12345" && user === "graceselle123") {
+                window.location.href = "home.html";  
+                alert("Login successfully");
+            } else {
+                alert("Error: Invalid username or password"); 
+            }
+        }
+        
+    </script>
+</body>
+</html>
